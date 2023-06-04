@@ -56,6 +56,9 @@ app.use("/api/users", usersRoutes);
 app.use("/api/tweets", tweetRoutes);
 app.use("/api/accounts", accountRoutes);
 
+//
+app.get("/api/test", (req, res, next) => res.send('Api is working 😏'))
+
 app.use((error, req, res, next) => {
   if (req.file) {
     fs.unlink(req.file.path, err => {
