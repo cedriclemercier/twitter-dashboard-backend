@@ -82,10 +82,8 @@ const fetchAccountDetails = async (req, res, next) => {
 }
 
 const fetchAccountDetailsV2 = async (req, res, next) => {
-    const { oauth_token } = req.query; // to req.body
+    const { oauth_token, oauth_token_secret } = req.query; // to req.body
     const username = req.params.username;
-
-    const oauth_token_secret = 'JMopmQN2hBlNsKex9JqFQd9a3UZnl1ssWv8Va3BCIOPFa';
 
     // TO CHANGE!!!!!!!!!!!!!!!!!!!!======================================
     if (!oauth_token || !oauth_token_secret) {
