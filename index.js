@@ -46,8 +46,8 @@ app.get(
   "/api/auth/twitter/callback",
   passport.authenticate("twitter", { failureRedirect: "/api/auth/arf" }),
   (req, res) => {
-    res.redirect(`${process.env.FRONTEND_URL}/login?userId=${req.user.user.id}&token=${req.user.token}&secret=${req.user.secret}`)
-    // res.send(req.user.token)
+    // res.redirect(`${process.env.FRONTEND_URL}/login?userId=${req.user.user.id}&token=${req.user.token}&secret=${req.user.secret}`)
+    res.json({userId: req.user.user.id, token: req.user.token, secret: req.user.secret})
   }
 );
 
